@@ -1,0 +1,489 @@
+
+(object Petal
+    version    	42
+    _written   	"Rose 4.5.8054a"
+    charSet    	0)
+
+(object Design "Logical View"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    defaults   	(object defaults
+	rightMargin 	0.250000
+	leftMargin 	0.250000
+	topMargin  	0.250000
+	bottomMargin 	0.500000
+	pageOverlap 	0.250000
+	clipIconLabels 	TRUE
+	autoResize 	TRUE
+	snapToGrid 	TRUE
+	gridX      	16
+	gridY      	16
+	defaultFont 	(object Font
+	    size       	10
+	    face       	"Arial"
+	    bold       	FALSE
+	    italics    	FALSE
+	    underline  	FALSE
+	    strike     	FALSE
+	    color      	0
+	    default_color 	TRUE)
+	showMessageNum 	1
+	showClassOfObject 	TRUE
+	notation   	"Unified")
+    root_usecase_package 	(object Class_Category "Use Case View"
+	quid       	"637404E102C7"
+	exportControl 	"Public"
+	global     	TRUE
+	logical_models 	(list unit_reference_list)
+	logical_presentations 	(list unit_reference_list
+	    (object UseCaseDiagram "Main"
+		quid       	"637404E10337"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    root_category 	(object Class_Category "Logical View"
+	quid       	"637404E102C6"
+	exportControl 	"Public"
+	global     	TRUE
+	subsystem  	"Component View"
+	quidu      	"637404E102C8"
+	logical_models 	(list unit_reference_list
+	    (object Class "Admin"
+		quid       	"637404E30159"
+		operations 	(list Operations
+		    (object Operation "login"
+			quid       	"637404F90260"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "viewStudent"
+			quid       	"637404FF0293"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "viewCounsellor"
+			quid       	"637405020244"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "viewStudentReports"
+			quid       	"6374050B0262"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "logout"
+			quid       	"6374051003D9"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "username"
+			quid       	"637404F30295")
+		    (object ClassAttribute "password"
+			quid       	"637404F50144")))
+	    (object Class "Student"
+		quid       	"637405190225"
+		used_nodes 	(list uses_relationship_list
+		    (object Uses_Relationship
+			quid       	"637405B801F6"
+			supplier   	"Logical View::Counsellor"
+			quidu      	"6374054F0108")
+		    (object Uses_Relationship
+			quid       	"637405C70062"
+			supplier   	"Logical View::Faculty"
+			quidu      	"637405880079"))
+		operations 	(list Operations
+		    (object Operation "login"
+			quid       	"6374052C0387"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "counsellingForm"
+			quid       	"63740532004C"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "personalDetails"
+			quid       	"63740539030B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "giveFeedback"
+			quid       	"637405410045"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "logout"
+			quid       	"6374054402FC"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"6374051E0250")
+		    (object ClassAttribute "email"
+			quid       	"6374051F01D6")
+		    (object ClassAttribute "rollno"
+			quid       	"637405200142")
+		    (object ClassAttribute "username"
+			quid       	"637405230007")
+		    (object ClassAttribute "password"
+			quid       	"63740524037D")
+		    (object ClassAttribute "mobile"
+			quid       	"6374052603E7")))
+	    (object Class "Counsellor"
+		quid       	"6374054F0108"
+		operations 	(list Operations
+		    (object Operation "register"
+			quid       	"637405650200"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "login"
+			quid       	"637405670236"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "addStudentDetails"
+			quid       	"6374056D03C7"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "feedback"
+			quid       	"637405770243"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "viewStudentDetails"
+			quid       	"6374057A0220"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "logout"
+			quid       	"6374057F03C4"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "name"
+			quid       	"637405580300")
+		    (object ClassAttribute "email"
+			quid       	"637405590366")
+		    (object ClassAttribute "mobile"
+			quid       	"6374055A030F")
+		    (object ClassAttribute "address"
+			quid       	"6374055E00B0")
+		    (object ClassAttribute "username"
+			quid       	"6374055F022B")
+		    (object ClassAttribute "password"
+			quid       	"637405600388")))
+	    (object Class "Faculty"
+		quid       	"637405880079"
+		operations 	(list Operations
+		    (object Operation "login"
+			quid       	"637405910122"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "searchStudent"
+			quid       	"637405A20366"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "generateReport"
+			quid       	"637405A50334"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "logout"
+			quid       	"637405A901AD"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0))
+		class_attributes 	(list class_attribute_list
+		    (object ClassAttribute "username"
+			quid       	"6374058C0093")
+		    (object ClassAttribute "password"
+			quid       	"6374058D0347")))
+	    (object Association "$UNNAMED$0"
+		quid       	"637405BB0287"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$1"
+			quid       	"637405BC004C"
+			supplier   	"Logical View::Student"
+			quidu      	"637405190225"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$2"
+			quid       	"637405BC004F"
+			supplier   	"Logical View::Admin"
+			quidu      	"637404E30159"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$3"
+		quid       	"637405BD02FC"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$4"
+			quid       	"637405BE00C7"
+			supplier   	"Logical View::Faculty"
+			quidu      	"637405880079"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$5"
+			quid       	"637405BE00CA"
+			supplier   	"Logical View::Admin"
+			quidu      	"637404E30159"
+			is_navigable 	TRUE)))
+	    (object Association "$UNNAMED$6"
+		quid       	"637405BF0300"
+		roles      	(list role_list
+		    (object Role "$UNNAMED$7"
+			quid       	"637405C000A5"
+			supplier   	"Logical View::Counsellor"
+			quidu      	"6374054F0108"
+			is_navigable 	TRUE)
+		    (object Role "$UNNAMED$8"
+			quid       	"637405C000A9"
+			supplier   	"Logical View::Faculty"
+			quidu      	"637405880079"
+			is_navigable 	TRUE))))
+	logical_presentations 	(list unit_reference_list
+	    (object ClassDiagram "Main"
+		quid       	"637404E102CE"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object ClassView "Class" "Logical View::Student" @1
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1552, 384)
+			label      	(object ItemLabel
+			    Parent_View 	@1
+			    location   	(1369, 53)
+			    fill_color 	12058623
+			    nlines     	1
+			    max_width  	366
+			    justify    	0
+			    label      	"Student")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"637405190225"
+			compartment 	(object Compartment
+			    Parent_View 	@1
+			    location   	(1369, 113)
+			    icon_style 	"Icon"
+			    fill_color 	12058623
+			    anchor     	2
+			    nlines     	12
+			    max_width  	360)
+			width      	384
+			height     	686
+			annotation 	8
+			autoResize 	TRUE)
+		    (object ClassView "Class" "Logical View::Admin" @2
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(496, 640)
+			label      	(object ItemLabel
+			    Parent_View 	@2
+			    location   	(285, 409)
+			    fill_color 	12058623
+			    nlines     	1
+			    max_width  	422
+			    justify    	0
+			    label      	"Admin")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"637404E30159"
+			compartment 	(object Compartment
+			    Parent_View 	@2
+			    location   	(285, 469)
+			    icon_style 	"Icon"
+			    fill_color 	12058623
+			    anchor     	2
+			    nlines     	8
+			    max_width  	440)
+			width      	440
+			height     	486
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$0" @3
+			location   	(1037, 508)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"637405BB0287"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$1" @4
+				Parent_View 	@3
+				location   	(541, -132)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"637405BC004C"
+				client     	@3
+				supplier   	@1
+				line_style 	0)
+			    (object RoleView "$UNNAMED$2" @5
+				Parent_View 	@3
+				location   	(541, -132)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"637405BC004F"
+				client     	@3
+				supplier   	@2
+				line_style 	0)))
+		    (object ClassView "Class" "Logical View::Counsellor" @6
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1520, 1296)
+			label      	(object ItemLabel
+			    Parent_View 	@6
+			    location   	(1317, 940)
+			    fill_color 	12058623
+			    nlines     	1
+			    max_width  	406
+			    justify    	0
+			    label      	"Counsellor")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"6374054F0108"
+			compartment 	(object Compartment
+			    Parent_View 	@6
+			    location   	(1317, 1000)
+			    icon_style 	"Icon"
+			    fill_color 	12058623
+			    anchor     	2
+			    nlines     	13
+			    max_width  	425)
+			width      	424
+			height     	736
+			annotation 	8
+			autoResize 	TRUE)
+		    (object UsesView "" @7
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"637405B801F6"
+			client     	@1
+			supplier   	@6
+			line_style 	0)
+		    (object ClassView "Class" "Logical View::Faculty" @8
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(576, 1488)
+			label      	(object ItemLabel
+			    Parent_View 	@8
+			    location   	(406, 1282)
+			    fill_color 	12058623
+			    nlines     	1
+			    max_width  	340
+			    justify    	0
+			    label      	"Faculty")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	12058623
+			quidu      	"637405880079"
+			compartment 	(object Compartment
+			    Parent_View 	@8
+			    location   	(406, 1342)
+			    icon_style 	"Icon"
+			    fill_color 	12058623
+			    anchor     	2
+			    nlines     	7
+			    max_width  	359)
+			width      	358
+			height     	436
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$3" @9
+			location   	(536, 1076)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"637405BD02FC"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$4" @10
+				Parent_View 	@9
+				location   	(40, 436)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"637405BE00C7"
+				client     	@9
+				supplier   	@8
+				line_style 	0)
+			    (object RoleView "$UNNAMED$5" @11
+				Parent_View 	@9
+				location   	(40, 436)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"637405BE00CA"
+				client     	@9
+				supplier   	@2
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$6" @12
+			location   	(1031, 1394)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"637405BF0300"
+			roleview_list 	(list RoleViews
+			    (object RoleView "$UNNAMED$7" @13
+				Parent_View 	@12
+				location   	(455, -94)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"637405C000A5"
+				client     	@12
+				supplier   	@6
+				line_style 	0)
+			    (object RoleView "$UNNAMED$8" @14
+				Parent_View 	@12
+				location   	(455, -94)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"637405C000A9"
+				client     	@12
+				supplier   	@8
+				line_style 	0)))
+		    (object UsesView "" @15
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"637405C70062"
+			client     	@1
+			supplier   	@8
+			line_style 	0)))))
+    root_subsystem 	(object SubSystem "Component View"
+	quid       	"637404E102C8"
+	physical_models 	(list unit_reference_list)
+	physical_presentations 	(list unit_reference_list
+	    (object Module_Diagram "Main"
+		quid       	"637404E10336"
+		title      	"Main"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    process_structure 	(object Processes
+	quid       	"637404E102C9"
+	ProcsNDevs 	(list
+	    (object Process_Diagram "Deployment View"
+		quid       	"637404E102CB"
+		title      	"Deployment View"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list))))
+    properties 	(object Properties
+	quid       	"637404E102CA"))
